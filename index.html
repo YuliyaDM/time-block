@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::after, *::before{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-weight: 100;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align:center;
+            align-items: center;
+        }
+        .timer{
+            font-family: sans-serif;
+            font-weight:100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align:center;
+            align-items: center;
+            border: 2px solid gainsboro;
+        }
+
+        #clock, #color{
+            padding-left: calc((1vh + 1vw) * 2.5);
+            padding-right: calc((1vh + 1vw) * 2.5);
+            color: white;
+        }
+
+        #clock{
+            padding-top: calc((1vh + 1vw) * 2.5);
+            padding-bottom: calc((1vh + 1vw) * 1.25);
+        }
+
+        #color{
+            padding-bottom: calc((1vh + 1vw) * 2.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">
+        <h1 id="clock">00:00:00</h1>
+        <p id="color">#000000</p>
+    </div>
+    <script>
+
+        let clock = document.getElementById('clock');
+        let color = document.getElementById('color');
+
+        function backgroundchanger(){
+            let time = new Date().toString().split(' ')[4];
+            clock.textContent = time;
+            color.textContent = '#' + time.split(':').join('')
+            timer.style.background = '#' + time.split(':').join('');
+            timer.style.fontSize = `${time[6]}${time[7]}px`;
+        }
+
+        backgroundchanger();
+        setInterval(backgroundchanger, 1000);
+    </script>
+</body>
+</html>
