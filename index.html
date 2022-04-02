@@ -11,7 +11,6 @@
             padding: 0;
             border: 0;
             box-sizing: border-box;
-            font-weight: 100;
         }
         html,body{
             width: 100%;
@@ -67,6 +66,7 @@
             color.textContent = '#' + time.split(':').join('')
             timer.style.background = '#' + time.split(':').join('');
             timer.style.fontSize = `${time[6]}${time[7]}px`;
+            timer.style.fontWeight =  `${time[7]}00`;     
         }
 
         backgroundchanger();
